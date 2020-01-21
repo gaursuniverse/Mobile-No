@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class RegexDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Mobile Number:");
+        String regex = "(\\+91|0)?[6-9]\\d{9}";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(sc.nextLine());
+        ArrayList<String> MoblieNo = new ArrayList<>();
+        while (m.find()){
+            String obj = m.group();
+            MoblieNo.add(obj);
+            System.out.println(obj +" is a valid mobile number.");
+        }
+    }
+}
